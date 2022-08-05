@@ -38,6 +38,9 @@ for key, value in meta.column_names_to_labels.items() :
 #df.columns = meta.column_names
 df.columns = list
 
+# print number of rows in df
+print("Number of rows in df: ".format(len(df.index)))
+
 #write to csv
 df.to_csv("output_file.csv", index=False)
 
