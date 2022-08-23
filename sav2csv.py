@@ -6,14 +6,15 @@ filename = sys.argv[1]
 file_ext = filename[-3:]
 #df, meta = pyreadstat.read_por(filename)
 
-if file_ext == "por":
+if file_ext.lower() == "por":
     #print("por")
     df, meta = pyreadstat.read_por(filename, apply_value_formats=True, formats_as_category=True, formats_as_ordered_category=False)
-elif file_ext == "sav":
+elif file_ext.lower() == "sav":
     #print("sav")
     df, meta = pyreadstat.read_sav(filename, apply_value_formats=True, formats_as_category=True, formats_as_ordered_category=False)
 else:
     print("Not a sav or a por file!")
+    exit(1)
 # done! let's see what we got
 #print(df.head())
 #print(meta.column_names)
